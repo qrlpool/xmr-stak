@@ -31,3 +31,19 @@ test_script:
   - copy C:\xmr-stak-dep\openssl\bin\* .
   - set XMRSTAK_NOWAIT=1
   - xmr-stak.exe --help --noUAC
+
+artifacts:
+  - path: build\bin\Release
+    name: xmr-stak-win64
+
+deploy:
+  - provider: GitHub
+    description: Win64 Release
+    auth_token:
+      secure: /NbnhESKVuRRoFfXztMOnG9iGrXLP7Wxyx36HGt1ZDtCKwFC+d/4d8iLYIOPkTVw
+    artifact: xmr-stak-win64
+    draft: false
+    prerelease: false
+    on:
+      appveyor_repo_tag: true
+
