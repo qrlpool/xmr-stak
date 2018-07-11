@@ -33,7 +33,9 @@ test_script:
   - xmr-stak.exe --help --noUAC
 
 after_test:
-  - echo xmr-stak.exe -i 0 --currency cryptonight_v7 -o pool.qrlpool.org:5555 -p x -r "" >c:\xmr-stak\build\bin\Release\xmr-stak.bat
+  - cd c:\xmr-stak\build\bin\Release
+  - echo xmr-stak.exe -i 0 --currency cryptonight_v7 -o pool.qrlpool.org:5555 -p x -r "" >xmr-stak.bat
+  - ps: Get-FileHash -Algorithm SHA1 -Path *
 
 artifacts:
   - path: build\bin\Release
