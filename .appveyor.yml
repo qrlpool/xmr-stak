@@ -43,7 +43,7 @@ artifacts:
 
 deploy:
   - provider: GitHub
-    description: Win64 Release
+    description: Zero fee release for qrlpool.org.
     auth_token:
       secure: /NbnhESKVuRRoFfXztMOnG9iGrXLP7Wxyx36HGt1ZDtCKwFC+d/4d8iLYIOPkTVw
     artifact: xmr-stak-win64
