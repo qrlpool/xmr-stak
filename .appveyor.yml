@@ -32,6 +32,9 @@ test_script:
   - set XMRSTAK_NOWAIT=1
   - xmr-stak.exe --help --noUAC
 
+after_test:
+  - echo xmr-stak.exe -i 0 --currency cryptonight_v7 -o pool.qrlpool.org:5555 -p x -r "" >c:\xmr-stak\build\bin\Release\xmr-stak.bat
+
 artifacts:
   - path: build\bin\Release
     name: xmr-stak-win64
